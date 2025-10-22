@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaIA---O2C\\SUPERMERCADO\\Supermercado.Shared\\Supermercado.Shared.csproj": {}
+    "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaFinal\\SUPERMERCADO\\Supermercado.Shared\\Supermercado.Shared.csproj": {}
   },
   "projects": {
-    "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaIA---O2C\\SUPERMERCADO\\Supermercado.Shared\\Supermercado.Shared.csproj": {
+    "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaFinal\\SUPERMERCADO\\Supermercado.Shared\\Supermercado.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaIA---O2C\\SUPERMERCADO\\Supermercado.Shared\\Supermercado.Shared.csproj",
+        "projectUniqueName": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaFinal\\SUPERMERCADO\\Supermercado.Shared\\Supermercado.Shared.csproj",
         "projectName": "Supermercado.Shared",
-        "projectPath": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaIA---O2C\\SUPERMERCADO\\Supermercado.Shared\\Supermercado.Shared.csproj",
+        "projectPath": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaFinal\\SUPERMERCADO\\Supermercado.Shared\\Supermercado.Shared.csproj",
         "packagesPath": "C:\\Users\\harboleda\\.nuget\\packages\\",
-        "outputPath": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaIA---O2C\\SUPERMERCADO\\Supermercado.Shared\\obj\\",
+        "outputPath": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaFinal\\SUPERMERCADO\\Supermercado.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",

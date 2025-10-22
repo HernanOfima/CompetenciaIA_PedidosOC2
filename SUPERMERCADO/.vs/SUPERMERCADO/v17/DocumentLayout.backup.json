@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaIA---O2C\\SUPERMERCADO\\",
+  "WorkspaceRootPath": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaFinal\\SUPERMERCADO\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12FA7134-3043-4823-A19E-96021CED9AA5}|Supermercado.Backend\\Supermercado.Backend.csproj|c:\\fuenteserp\\competenciaia\\pruebao2c\\pruebaia---o2c\\supermercado\\supermercado.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{12FA7134-3043-4823-A19E-96021CED9AA5}|Supermercado.Backend\\Supermercado.Backend.csproj|c:\\fuenteserp\\competenciaia\\pruebao2c\\pruebafinal\\supermercado\\supermercado.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{12FA7134-3043-4823-A19E-96021CED9AA5}|Supermercado.Backend\\Supermercado.Backend.csproj|solutionrelative:supermercado.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12FA7134-3043-4823-A19E-96021CED9AA5}|Supermercado.Backend\\Supermercado.Backend.csproj|c:\\fuenteserp\\competenciaia\\pruebao2c\\pruebaia---o2c\\supermercado\\supermercado.backend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{12FA7134-3043-4823-A19E-96021CED9AA5}|Supermercado.Backend\\Supermercado.Backend.csproj|c:\\fuenteserp\\competenciaia\\pruebao2c\\pruebafinal\\supermercado\\supermercado.backend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12FA7134-3043-4823-A19E-96021CED9AA5}|Supermercado.Backend\\Supermercado.Backend.csproj|solutionrelative:supermercado.backend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -60,9 +60,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaIA---O2C\\SUPERMERCADO\\Supermercado.Backend\\Data\\DataContext.cs",
+              "DocumentMoniker": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaFinal\\SUPERMERCADO\\Supermercado.Backend\\Data\\DataContext.cs",
               "RelativeDocumentMoniker": "Supermercado.Backend\\Data\\DataContext.cs",
-              "ToolTip": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaIA---O2C\\SUPERMERCADO\\Supermercado.Backend\\Data\\DataContext.cs",
+              "ToolTip": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaFinal\\SUPERMERCADO\\Supermercado.Backend\\Data\\DataContext.cs",
               "RelativeToolTip": "Supermercado.Backend\\Data\\DataContext.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAmwBoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -72,9 +72,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaIA---O2C\\SUPERMERCADO\\Supermercado.Backend\\appsettings.json",
+              "DocumentMoniker": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaFinal\\SUPERMERCADO\\Supermercado.Backend\\appsettings.json",
               "RelativeDocumentMoniker": "Supermercado.Backend\\appsettings.json",
-              "ToolTip": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaIA---O2C\\SUPERMERCADO\\Supermercado.Backend\\appsettings.json",
+              "ToolTip": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaFinal\\SUPERMERCADO\\Supermercado.Backend\\appsettings.json",
               "RelativeToolTip": "Supermercado.Backend\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",

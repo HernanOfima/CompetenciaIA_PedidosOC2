@@ -10,3 +10,15 @@ C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaIA---O2C\SUPERMERCADO\Supermercado.S
 C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaIA---O2C\SUPERMERCADO\Supermercado.Shared\obj\Debug\net9.0\refint\Supermercado.Shared.dll
 C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaIA---O2C\SUPERMERCADO\Supermercado.Shared\obj\Debug\net9.0\Supermercado.Shared.pdb
 C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaIA---O2C\SUPERMERCADO\Supermercado.Shared\obj\Debug\net9.0\ref\Supermercado.Shared.dll
+C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaFinal\SUPERMERCADO\Supermercado.Shared\bin\Debug\net9.0\Supermercado.Shared.deps.json
+C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaFinal\SUPERMERCADO\Supermercado.Shared\bin\Debug\net9.0\Supermercado.Shared.dll
+C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaFinal\SUPERMERCADO\Supermercado.Shared\bin\Debug\net9.0\Supermercado.Shared.pdb
+C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaFinal\SUPERMERCADO\Supermercado.Shared\obj\Debug\net9.0\Supermercado.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaFinal\SUPERMERCADO\Supermercado.Shared\obj\Debug\net9.0\Supermercado.Shared.AssemblyInfoInputs.cache
+C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaFinal\SUPERMERCADO\Supermercado.Shared\obj\Debug\net9.0\Supermercado.Shared.AssemblyInfo.cs
+C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaFinal\SUPERMERCADO\Supermercado.Shared\obj\Debug\net9.0\Supermercado.Shared.csproj.CoreCompileInputs.cache
+C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaFinal\SUPERMERCADO\Supermercado.Shared\obj\Debug\net9.0\Supermercado.Shared.sourcelink.json
+C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaFinal\SUPERMERCADO\Supermercado.Shared\obj\Debug\net9.0\Supermercado.Shared.dll
+C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaFinal\SUPERMERCADO\Supermercado.Shared\obj\Debug\net9.0\refint\Supermercado.Shared.dll
+C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaFinal\SUPERMERCADO\Supermercado.Shared\obj\Debug\net9.0\Supermercado.Shared.pdb
+C:\FuentesERP\CompetenciaIA\PruebaO2C\PruebaFinal\SUPERMERCADO\Supermercado.Shared\obj\Debug\net9.0\ref\Supermercado.Shared.dll

@@ -327,7 +327,7 @@ DEFINE CLASS frmOrdersGeneral AS Form
     
     PROCEDURE DeleteOrder
         IF THIS.nCurrentOrderId > 0
-            IF MESSAGEBOX("¿Está seguro de eliminar este order?", 4+32, "Confirmar") = 6
+            IF MESSAGEBOX("Esta� seguro de eliminar este order?", 4+32, "Confirmar") = 6
                 LOCAL lcResponse
                 lcResponse = THIS.APIDelete("/Orders/" + TRANSFORM(THIS.nCurrentOrderId))
                 IF !EMPTY(lcResponse)
@@ -350,12 +350,13 @@ DEFINE CLASS frmOrdersGeneral AS Form
     PROCEDURE AddOrderLine
         LOCAL llError
         llError = .F.
-        
+
         * Debug: Verificar si el cursor existe
         IF !USED("curOrderLines")
             MESSAGEBOX("Error: Cursor curOrderLines no existe. Creando...", 48, "Debug")
             THIS.CreateCursor()
         ENDIF
+        
         
         * Si no está en modo edición, activarlo automáticamente
         IF !THIS.lEditMode
@@ -376,7 +377,10 @@ DEFINE CLASS frmOrdersGeneral AS Form
             GO BOTTOM IN curOrderLines
             THIS.grdOrderLines.Refresh()
             THIS.grdOrderLines.enabled = .T.
-            MESSAGEBOX("Línea agregada correctamente. Total registros: " + TRANSFORM(RECCOUNT("curOrderLines")), 64, "Debug")
+			THIS.grdOrderLines.RecordSourceType = 1
+			THIS.grdOrderLines.RecordSource = "curOrderLines"            
+			
+            *MESSAGEBOX("Línea agregada correctamente. Total registros: " + TRANSFORM(RECCOUNT("curOrderLines")), 64, "Debug")
         ENDIF
     ENDPROC
     

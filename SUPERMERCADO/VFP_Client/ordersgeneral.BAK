@@ -327,7 +327,7 @@ DEFINE CLASS frmOrdersGeneral AS Form
     
     PROCEDURE DeleteOrder
         IF THIS.nCurrentOrderId > 0
-            IF MESSAGEBOX("¿Está seguro de eliminar este order?", 4+32, "Confirmar") = 6
+            IF MESSAGEBOX("Esta� seguro de eliminar este order?", 4+32, "Confirmar") = 6
                 LOCAL lcResponse
                 lcResponse = THIS.APIDelete("/Orders/" + TRANSFORM(THIS.nCurrentOrderId))
                 IF !EMPTY(lcResponse)
@@ -351,11 +351,13 @@ DEFINE CLASS frmOrdersGeneral AS Form
         LOCAL llError
         llError = .F.
         
+        SET STEP ON
         * Debug: Verificar si el cursor existe
         IF !USED("curOrderLines")
             MESSAGEBOX("Error: Cursor curOrderLines no existe. Creando...", 48, "Debug")
             THIS.CreateCursor()
         ENDIF
+        
         
         * Si no está en modo edición, activarlo automáticamente
         IF !THIS.lEditMode
@@ -365,7 +367,7 @@ DEFINE CLASS frmOrdersGeneral AS Form
         TRY
             * Agregar nueva línea
             INSERT INTO curOrderLines (productId, qty, productName) VALUES (0, 1, "Producto nuevo")
-            THIS.lblStatus.Caption = "Línea agregada - Registros: " + TRANSFORM(RECCOUNT("curOrderLines"))
+            THIS.lblStatus.Caption = "Linea agregada - Registros: " + TRANSFORM(RECCOUNT("curOrderLines"))
         CATCH TO loEx
             MESSAGEBOX("Error al insertar: " + loEx.Message, 16, "Error")
             llError = .T.
@@ -376,7 +378,10 @@ DEFINE CLASS frmOrdersGeneral AS Form
             GO BOTTOM IN curOrderLines
             THIS.grdOrderLines.Refresh()
             THIS.grdOrderLines.enabled = .T.
-            MESSAGEBOX("Línea agregada correctamente. Total registros: " + TRANSFORM(RECCOUNT("curOrderLines")), 64, "Debug")
+			THIS.grdOrderLines.RecordSourceType = 1
+			THIS.grdOrderLines.RecordSource = "curOrderLines"            
+			
+            *MESSAGEBOX("Línea agregada correctamente. Total registros: " + TRANSFORM(RECCOUNT("curOrderLines")), 64, "Debug")
         ENDIF
     ENDPROC
     

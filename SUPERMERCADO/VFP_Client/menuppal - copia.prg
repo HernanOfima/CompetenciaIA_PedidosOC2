@@ -13,75 +13,11 @@ oForm.Show()
 READ EVENTS
 RETURN
 
-DEFINE CLASS SidebarItem AS Container
-    Width = 200
-    Height = 40
-    BackColor = RGB(67,87,117)
-    nBackColor = RGB(67,87,117)
-    nForeColor = RGB(255,255,255)
-    nBorderColor = RGB(82,101,132)
-    lBold = .F.
-    cCaption = ""
-    cModule = ""
-    ADD OBJECT shpBackground AS Shape WITH ;
-        Top = 0, Left = 0, Width = 200, Height = 40, ;
-        BackColor = RGB(67,87,117), BorderColor = RGB(82,101,132), ;
-        BorderWidth = 1, SpecialEffect = 0
-    ADD OBJECT lblText AS Label WITH ;
-        Top = 10, Left = 16, Width = 168, Height = 20, ;
-        Caption = "", FontName = "Segoe UI", FontSize = 10, ;
-        ForeColor = RGB(255,255,255), BackStyle = 0
-    PROCEDURE Init
-        THIS.Resize()
-        THIS.RefreshAppearance()
-    ENDPROC
-    PROCEDURE Resize
-        THIS.shpBackground.Width = THIS.Width
-        THIS.shpBackground.Height = THIS.Height
-        THIS.lblText.Width = THIS.Width - 32
-        THIS.lblText.Height = THIS.Height - 20
-    ENDPROC
-    PROCEDURE RefreshAppearance
-        THIS.shpBackground.BackColor = THIS.nBackColor
-        THIS.shpBackground.BorderColor = THIS.nBorderColor
-        THIS.lblText.Caption = THIS.cCaption
-        THIS.lblText.ForeColor = THIS.nForeColor
-        THIS.lblText.FontBold = THIS.lBold
-    ENDPROC
-    PROCEDURE SetAppearance
-        LPARAMETERS lnBackColor, lnForeColor, llBold, lnBorderColor
-        IF TYPE("lnBackColor") = "N"
-            THIS.nBackColor = lnBackColor
-        ENDIF
-        IF TYPE("lnForeColor") = "N"
-            THIS.nForeColor = lnForeColor
-        ENDIF
-        IF TYPE("llBold") = "L"
-            THIS.lBold = llBold
-        ENDIF
-        IF TYPE("lnBorderColor") = "N"
-            THIS.nBorderColor = lnBorderColor
-        ENDIF
-        THIS.RefreshAppearance()
-    ENDPROC
-    PROCEDURE Click
-        IF NOT EMPTY(THIS.cModule)
-            THISFORM.LoadModule(THIS.cModule)
-        ENDIF
-    ENDPROC
-    PROCEDURE lblText.Click
-        THIS.Parent.Click()
-    ENDPROC
-    PROCEDURE shpBackground.Click
-        THIS.Parent.Click()
-    ENDPROC
-ENDDEFINE
-
+*==============================================================================
 DEFINE CLASS frmMain AS Form
     Height = 700
     Width = 1200
     AutoCenter = .T.
-    Themes = .F.
     Caption = "Sistema Gestion OC2 - Panel Principal"
     BorderStyle = 3
     ShowWindow = 2
@@ -92,12 +28,6 @@ DEFINE CLASS frmMain AS Form
     
     *-- Propiedades personalizadas
     cCurrentModule = ""
-    nSidebarDefaultBack = RGB(67,87,117)
-    nSidebarDefaultFore = RGB(255,255,255)
-    nSidebarDefaultBorder = RGB(82,101,132)
-    nSidebarActiveBack = RGB(59,130,246)
-    nSidebarActiveFore = RGB(255,255,255)
-    nSidebarActiveBorder = RGB(37,99,235)
     
     *-- Fondo principal
     ADD OBJECT shpBackground AS Shape WITH ;
@@ -107,7 +37,7 @@ DEFINE CLASS frmMain AS Form
     *-- Navbar lateral (sidebar)
     ADD OBJECT shpSidebar AS Shape WITH ;
         Top = 0, Left = 0, Height = 700, Width = 220, ;
-        BackColor = RGB(30,41,59), BorderWidth = 0
+        BackColor = RGB(33,43,54), BorderWidth = 0
     
     *-- Logo y titulo en sidebar
     ADD OBJECT lblLogo AS Label WITH ;
@@ -117,46 +47,60 @@ DEFINE CLASS frmMain AS Form
     
     ADD OBJECT lineSeparator AS Line WITH ;
         X1 = 20, Y1 = 60, X2 = 200, Y2 = 60, ;
-        BorderColor = RGB(71,85,105), BorderWidth = 1
+        BorderColor = RGB(60,70,85), BorderWidth = 1
     
     *-- Botones del menu (navbar)
-    ADD OBJECT btnCustomers AS SidebarItem WITH ;
-        Top = 90, Left = 10, Width = 200, Height = 40, ;
-        cCaption = "Clientes", cModule = "Customers"
+    ADD OBJECT btnCustomers AS CommandButton WITH ;
+        Caption = CHR(9) + "Customers", Top = 90, Left = 10, Width = 200, Height = 40, ;
+        FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
+        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
+        SpecialEffect = 0, Alignment = 0
     
-    ADD OBJECT btnProducts AS SidebarItem WITH ;
-        Top = 135, Left = 10, Width = 200, Height = 40, ;
-        cCaption = "Productos", cModule = "Products"
+    ADD OBJECT btnProducts AS CommandButton WITH ;
+        Caption = CHR(9) + "Products", Top = 135, Left = 10, Width = 200, Height = 40, ;
+        FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
+        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
+        SpecialEffect = 0, Alignment = 0
     
-    ADD OBJECT btnOrders AS SidebarItem WITH ;
-        Top = 180, Left = 10, Width = 200, Height = 40, ;
-        cCaption = "Pedidos", cModule = "Orders"
+    ADD OBJECT btnOrders AS CommandButton WITH ;
+        Caption = CHR(9) + "Orders", Top = 180, Left = 10, Width = 200, Height = 40, ;
+        FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
+        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
+        SpecialEffect = 0, Alignment = 0
     
-    ADD OBJECT btnInvoices AS SidebarItem WITH ;
-        Top = 225, Left = 10, Width = 200, Height = 40, ;
-        cCaption = "Facturas", cModule = "Invoices"
+    ADD OBJECT btnInvoices AS CommandButton WITH ;
+        Caption = CHR(9) + "Invoices", Top = 225, Left = 10, Width = 200, Height = 40, ;
+        FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
+        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
+        SpecialEffect = 0, Alignment = 0
     
-    ADD OBJECT btnReports AS SidebarItem WITH ;
-        Top = 270, Left = 10, Width = 200, Height = 40, ;
-        cCaption = "Reportes", cModule = "Reports"
+    ADD OBJECT btnReports AS CommandButton WITH ;
+        Caption = CHR(9) + "Reports", Top = 270, Left = 10, Width = 200, Height = 40, ;
+        FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
+        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
+        SpecialEffect = 0, Alignment = 0
     
-    ADD OBJECT btnRoles AS SidebarItem WITH ;
-        Top = 315, Left = 10, Width = 200, Height = 40, ;
-        cCaption = "Roles", cModule = "Roles"
+    ADD OBJECT btnRoles AS CommandButton WITH ;
+        Caption = CHR(9) + "Roles", Top = 315, Left = 10, Width = 200, Height = 40, ;
+        FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
+        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
+        SpecialEffect = 0, Alignment = 0
     
-    ADD OBJECT btnCategories AS SidebarItem WITH ;
-        Top = 360, Left = 10, Width = 200, Height = 40, ;
-        cCaption = "Categorias", cModule = "Categories"
+    ADD OBJECT btnCategories AS CommandButton WITH ;
+        Caption = CHR(9) + "Categories", Top = 360, Left = 10, Width = 200, Height = 40, ;
+        FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
+        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
+        SpecialEffect = 0, Alignment = 0
     
     *-- Separador y boton de salir
     ADD OBJECT lineSeparator2 AS Line WITH ;
         X1 = 20, Y1 = 620, X2 = 200, Y2 = 620, ;
-        BorderColor = RGB(71,85,105), BorderWidth = 1
+        BorderColor = RGB(60,70,85), BorderWidth = 1
     
     ADD OBJECT btnLogout AS CommandButton WITH ;
         Caption = CHR(9) + "Logout", Top = 640, Left = 10, Width = 200, Height = 40, ;
         FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
-        BackColor = RGB(220,38,38), ForeColor = RGB(255,255,255), ;
+        BackColor = RGB(195,64,64), ForeColor = RGB(255,255,255), ;
         SpecialEffect = 0, Alignment = 0
     
     *-- Area de contenido principal
@@ -261,6 +205,36 @@ DEFINE CLASS frmMain AS Form
         THIS.HighlightButton(THIS.btnCustomers)
     ENDPROC
     
+    PROCEDURE btnCustomers.Click
+        THISFORM.LoadModule("Customers")
+    ENDPROC
+    
+    PROCEDURE btnProducts.Click
+        THISFORM.LoadModule("Products")
+    ENDPROC
+    
+    PROCEDURE btnOrders.Click
+        THISFORM.LoadModule("Orders")
+        * Abrir el formulario de gestión de orders
+        DO OrdersGeneral.prg
+    ENDPROC
+    
+    PROCEDURE btnInvoices.Click
+        THISFORM.LoadModule("Invoices")
+    ENDPROC
+    
+    PROCEDURE btnReports.Click
+        THISFORM.LoadModule("Reports")
+    ENDPROC
+    
+    PROCEDURE btnRoles.Click
+        THISFORM.LoadModule("Roles")
+    ENDPROC
+    
+    PROCEDURE btnCategories.Click
+        THISFORM.LoadModule("Categories")
+    ENDPROC
+    
     PROCEDURE btnLogout.Click
         IF MESSAGEBOX("Are you sure you want to logout?", 4+32, "Confirm Logout") = 6
             gcToken = ""
@@ -291,7 +265,6 @@ DEFINE CLASS frmMain AS Form
             CASE lcModule = "Orders"
                 THIS.HighlightButton(THIS.btnOrders)
                 THIS.lblModuleTitle.Caption = "Orders Module - Coming Soon"
-                DO OrdersGeneral.prg
                 
             CASE lcModule = "Invoices"
                 THIS.HighlightButton(THIS.btnInvoices)
@@ -312,17 +285,19 @@ DEFINE CLASS frmMain AS Form
     ENDPROC
     
     PROCEDURE ResetButtons
-        THIS.btnCustomers.SetAppearance(THIS.nSidebarDefaultBack, THIS.nSidebarDefaultFore, .F., THIS.nSidebarDefaultBorder)
-        THIS.btnProducts.SetAppearance(THIS.nSidebarDefaultBack, THIS.nSidebarDefaultFore, .F., THIS.nSidebarDefaultBorder)
-        THIS.btnOrders.SetAppearance(THIS.nSidebarDefaultBack, THIS.nSidebarDefaultFore, .F., THIS.nSidebarDefaultBorder)
-        THIS.btnInvoices.SetAppearance(THIS.nSidebarDefaultBack, THIS.nSidebarDefaultFore, .F., THIS.nSidebarDefaultBorder)
-        THIS.btnReports.SetAppearance(THIS.nSidebarDefaultBack, THIS.nSidebarDefaultFore, .F., THIS.nSidebarDefaultBorder)
-        THIS.btnRoles.SetAppearance(THIS.nSidebarDefaultBack, THIS.nSidebarDefaultFore, .F., THIS.nSidebarDefaultBorder)
-        THIS.btnCategories.SetAppearance(THIS.nSidebarDefaultBack, THIS.nSidebarDefaultFore, .F., THIS.nSidebarDefaultBorder)
+        THIS.btnCustomers.BackColor = RGB(45,55,70)
+        THIS.btnProducts.BackColor = RGB(45,55,70)
+        THIS.btnOrders.BackColor = RGB(45,55,70)
+        THIS.btnInvoices.BackColor = RGB(45,55,70)
+        THIS.btnReports.BackColor = RGB(45,55,70)
+        THIS.btnRoles.BackColor = RGB(45,55,70)
+        THIS.btnCategories.BackColor = RGB(45,55,70)
     ENDPROC
     
     PROCEDURE HighlightButton
         LPARAMETERS loButton
-        loButton.SetAppearance(THIS.nSidebarActiveBack, THIS.nSidebarActiveFore, .T., THIS.nSidebarActiveBorder)
+        loButton.BackColor = RGB(37,92,221)
+        loButton.ForeColor = RGB(255,255,255)
+        loButton.FontBold = .T.
     ENDPROC
 ENDDEFINE

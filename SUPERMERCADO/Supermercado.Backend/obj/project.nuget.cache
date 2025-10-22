@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hdc2caMgHWQ=",
+  "dgSpecHash": "lr+bXzI5kEU=",
   "success": true,
-  "projectFilePath": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaIA---O2C\\SUPERMERCADO\\Supermercado.Backend\\Supermercado.Backend.csproj",
+  "projectFilePath": "C:\\FuentesERP\\CompetenciaIA\\PruebaO2C\\PruebaFinal\\SUPERMERCADO\\Supermercado.Backend\\Supermercado.Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\harboleda\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\harboleda\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Gestión OC2 - Documentación VFP Client</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+        }
+        
+        .header-content {
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        nav a {
+            color: #2563eb;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #eff6ff;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #1e40af;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            color: #374151;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: #f9fafb;
+        }
+        
+        .feature-card h4 {
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-block {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .tech-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .spec-item {
+            padding: 1rem;
+            background: #f3f4f6;
+            border-radius: 6px;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .screenshot {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+        }
+        
+        .workflow-step {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 6px;
+            border-left: 4px solid #10b981;
+        }
+        
+        .step-number {
+            background: #10b981;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Sistema Gestión OC2</h1>
+                <p class="subtitle">Documentación Funcional y Técnica - Cliente Visual FoxPro</p>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#overview">Resumen General</a></li>
+                <li><a href="#login">Módulo Login</a></li>
+                <li><a href="#dashboard">Dashboard Principal</a></li>
+                <li><a href="#orders">Gestión de Pedidos</a></li>
+                <li><a href="#technical">Especificaciones Técnicas</a></li>
+                <li><a href="#installation">Instalación</a></li>
+            </ul>
+        </nav>
+
+        <section id="overview" class="section">
+            <h2>📋 Resumen General</h2>
+            <p>El Sistema Gestión OC2 es una aplicación cliente desarrollada en Visual FoxPro que consume servicios REST para la gestión integral de pedidos, facturación e inventario. El sistema implementa autenticación JWT y proporciona una interfaz moderna para operaciones comerciales.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🔐 Autenticación Segura</h4>
+                    <p>Sistema de login con JWT tokens y validación de credenciales contra API REST.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📊 Dashboard Ejecutivo</h4>
+                    <p>Panel principal con métricas de ventas, visitantes y devoluciones en tiempo real.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📦 Gestión de Pedidos</h4>
+                    <p>Módulo completo para crear, editar y gestionar órdenes de compra con líneas de detalle.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎨 Interfaz Moderna</h4>
+                    <p>Diseño profesional con sidebar navegable y esquema de colores corporativo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="login" class="section">
+            <h2>🔐 Módulo de Login</h2>
+            
+            <h3>Funcionalidad</h3>
+            <p>El módulo de login proporciona autenticación segura mediante credenciales de usuario y genera tokens JWT para sesiones autenticadas.</p>
+            
+            <div class="workflow-step">
+                <div class="step-number">1</div>
+                <div>
+                    <strong>Ingreso de Credenciales:</strong> El usuario introduce email y contraseña en el formulario de acceso.
+                </div>
+            </div>
+            
+            <div class="workflow-step">
+                <div class="step-number">2</div>
+                <div>
+                    <strong>Validación API:</strong> Las credenciales se envían al endpoint de autenticación vía HTTPS.
+                </div>
+            </div>
+            
+            <div class="workflow-step">
+                <div class="step-number">3</div>
+                <div>
+                    <strong>Token JWT:</strong> Si la autenticación es exitosa, se recibe y almacena el token de sesión.
+                </div>
+            </div>
+            
+            <div class="workflow-step">
+                <div class="step-number">4</div>
+                <div>
+                    <strong>Redirección:</strong> El usuario es dirigido al dashboard principal del sistema.
+                </div>
+            </div>
+
+            <h3>Credenciales de Prueba</h3>
+            <div class="code-block">
+Email: admin@supermercado.com
+Password: admin123
+            </div>
+
+            <h3>Implementación Técnica</h3>
+            <div class="tech-specs">
+                <div class="spec-item">
+                    <strong>Archivo:</strong> login.prg
+                </div>
+                <div class="spec-item">
+                    <strong>Clase Principal:</strong> frmLogin
+                </div>
+                <div class="spec-item">
+                    <strong>Protocolo:</strong> HTTPS REST API
+                </div>
+                <div class="spec-item">
+                    <strong>Autenticación:</strong> JWT Bearer Token
+                </div>
+            </div>
+
+            <div class="code-block">
+* Ejemplo de autenticación
+loHTTP = CREATEOBJECT("WinHttp.WinHttpRequest.5.1")
+loHTTP.Open("POST", gcAPIBaseURL + "/auth/login", .F.)
+loHTTP.SetRequestHeader("Content-Type", "application/json")
+lcJSON = '{"email":"' + ALLTRIM(THIS.txtEmail.Value) + '","password":"' + ALLTRIM(THIS.txtPassword.Value) + '"}'
+loHTTP.Send(lcJSON)
+            </div>
+        </section>
+
+        <section id="dashboard" class="section">
+            <h2>📊 Dashboard Principal (MenuPpal)</h2>
+            
+            <h3>Funcionalidad</h3>
+            <p>El dashboard principal sirve como centro de control del sistema, proporcionando acceso rápido a todos los módulos y mostrando métricas clave del negocio.</p>
+
+            <h3>Componentes del Dashboard</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Sidebar de Navegación</h4>
+                    <p>Menú lateral con acceso a: Clientes, Productos, Pedidos, Facturas, Reportes, Roles y Categorías.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Tarjetas de Métricas</h4>
+                    <p>Visualización de ventas totales ($9,328.55), visitantes (12,302) y devoluciones (963).</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Área de Contenido</h4>
+                    <p>Espacio principal donde se cargan los diferentes módulos del sistema.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Información de Usuario</h4>
+                    <p>Muestra el usuario autenticado y proporciona opción de logout seguro.</p>
+                </div>
+            </div>
+
+            <h3>Implementación Técnica</h3>
+            <div class="tech-specs">
+                <div class="spec-item">
+                    <strong>Archivo:</strong> menuppal.prg
+                </div>
+                <div class="spec-item">
+                    <strong>Clase Principal:</strong> frmMain
+                </div>
+                <div class="spec-item">
+                    <strong>Clase Auxiliar:</strong> SidebarItem (Container personalizado)
+                </div>
+                <div class="spec-item">
+                    <strong>Esquema de Color:</strong> Azul corporativo con texto blanco
+                </div>
+            </div>
+
+            <div class="code-block">
+* Clase SidebarItem personalizada para navegación
+DEFINE CLASS SidebarItem AS Container
+    Width = 200
+    Height = 40
+    nBackColor = RGB(67,87,117)
+    nForeColor = RGB(255,255,255)
+    nBorderColor = RGB(82,101,132)
+    
+    PROCEDURE SetAppearance
+        LPARAMETERS lnBackColor, lnForeColor, llBold, lnBorderColor
+        * Actualiza apariencia del elemento sidebar
+    ENDPROC
+ENDDEFINE
+            </div>
+        </section>
+
+        <section id="orders" class="section">
+            <h2>📦 Gestión de Pedidos</h2>
+            
+            <h3>Funcionalidad</h3>
+            <p>El módulo de pedidos permite la creación, edición y gestión completa de órdenes de compra con sus respectivas líneas de detalle.</p>
+
+            <h3>Características Principales</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Encabezado de Orden</h4>
+                    <p>Gestión de Customer ID, Seller ID y notas del pedido con validaciones automáticas.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Líneas de Detalle</h4>
+                    <p>Grid editable para agregar productos con cantidad y cálculo automático de totales.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Operaciones CRUD</h4>
+                    <p>Funciones completas de Crear, Leer, Actualizar y Eliminar pedidos.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Integración API</h4>
+                    <p>Sincronización en tiempo real con el backend para persistencia de datos.</p>
+                </div>
+            </div>
+
+            <h3>Flujo de Trabajo</h3>
+            <div class="workflow-step">
+                <div class="step-number">1</div>
+                <div>
+                    <strong>Nuevo Pedido:</strong> Se inicia un nuevo pedido especificando cliente y vendedor.
+                </div>
+            </div>
+            
+            <div class="workflow-step">
+                <div class="step-number">2</div>
+                <div>
+                    <strong>Agregar Productos:</strong> Se añaden líneas de detalle con productos y cantidades.
+                </div>
+            </div>
+            
+            <div class="workflow-step">
+                <div class="step-number">3</div>
+                <div>
+                    <strong>Validación:</strong> El sistema valida disponibilidad de productos y datos requeridos.
+                </div>
+            </div>
+            
+            <div class="workflow-step">
+                <div class="step-number">4</div>
+                <div>
+                    <strong>Guardar:</strong> El pedido se persiste en la base de datos vía API REST.
+                </div>
+            </div>
+
+            <h3>Implementación Técnica</h3>
+            <div class="tech-specs">
+                <div class="spec-item">
+                    <strong>Archivo:</strong> ordersgeneral.prg
+                </div>
+                <div class="spec-item">
+                    <strong>Clase Principal:</strong> frmOrdersGeneral
+                </div>
+                <div class="spec-item">
+                    <strong>Controles:</strong> TextBox, Grid, CommandButton
+                </div>
+                <div class="spec-item">
+                    <strong>API Endpoints:</strong> /orders, /products, /customers
+                </div>
+            </div>
+        </section>
+
+        <section id="technical" class="section">
+            <h2>⚙️ Especificaciones Técnicas</h2>
+            
+            <h3>Requisitos del Sistema</h3>
+            <div class="tech-specs">
+                <div class="spec-item">
+                    <strong>Visual FoxPro:</strong> Versión 9.0 o superior
+                </div>
+                <div class="spec-item">
+                    <strong>Sistema Operativo:</strong> Windows con soporte WinHTTP
+                </div>
+                <div class="spec-item">
+                    <strong>API Backend:</strong> https://localhost:7109/api/v1
+                </div>
+                <div class="spec-item">
+                    <strong>Conectividad:</strong> Internet para consumo de API REST
+                </div>
+            </div>
+
+            <h3>Arquitectura del Sistema</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Capa de Presentación</h4>
+                    <p>Formularios VFP con controles nativos y clases personalizadas para UI moderna.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Capa de Comunicación</h4>
+                    <p>WinHTTP para consumo de servicios REST con manejo de autenticación JWT.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Capa de Datos</h4>
+                    <p>API REST como fuente de datos principal con endpoints RESTful estándar.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Gestión de Estado</h4>
+                    <p>Variables públicas para token de sesión y datos de usuario autenticado.</p>
+                </div>
+            </div>
+
+            <h3>Variables Globales del Sistema</h3>
+            <div class="code-block">
+PUBLIC gcAPIBaseURL, gcToken, gcUserEmail, gcUserRole
+gcAPIBaseURL = "https://localhost:7109/api/v1"
+gcToken = ""          && JWT Token de autenticación
+gcUserEmail = ""      && Email del usuario autenticado  
+gcUserRole = ""       && Rol: Admin, Seller, User
+            </div>
+
+            <h3>Estructura de Archivos</h3>
+            <div class="code-block">
+VFP_Client/
+├── login.prg           - Módulo de autenticación
+├── menuppal.prg        - Dashboard principal
+├── ordersgeneral.prg   - Gestión de pedidos
+├── dashboard.prg       - Panel de métricas
+├── main_menu.prg       - Menú principal alternativo
+└── README_VFP.md       - Documentación técnica
+            </div>
+        </section>
+
+        <section id="installation" class="section">
+            <h2>🚀 Instalación y Configuración</h2>
+            
+            <h3>Pasos de Instalación</h3>
+            <div class="workflow-step">
+                <div class="step-number">1</div>
+                <div>
+                    <strong>Copiar Archivos:</strong> Extraer todos los archivos .prg a una carpeta local del sistema.
+                </div>
+            </div>
+            
+            <div class="workflow-step">
+                <div class="step-number">2</div>
+                <div>
+                    <strong>Verificar API:</strong> Asegurar que el backend esté ejecutándose en https://localhost:7109
+                </div>
+            </div>
+            
+            <div class="workflow-step">
+                <div class="step-number">3</div>
+                <div>
+                    <strong>Ejecutar Login:</strong> Desde Visual FoxPro, ejecutar DO login.prg para iniciar la aplicación.
+                </div>
+            </div>
+            
+            <div class="workflow-step">
+                <div class="step-number">4</div>
+                <div>
+                    <strong>Autenticarse:</strong> Usar las credenciales de prueba para acceder al sistema.
+                </div>
+            </div>
+
+            <h3>Configuración de API</h3>
+            <p>Para cambiar la URL base de la API, modificar la variable en login.prg:</p>
+            <div class="code-block">
+gcAPIBaseURL = "https://tu-servidor.com/api/v1"
+            </div>
+
+            <h3>Solución de Problemas Comunes</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Error de Conexión HTTP</h4>
+                    <p>Verificar que WinHTTP esté disponible en Windows y que la API esté accesible.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Error 401 Unauthorized</h4>
+                    <p>Token JWT expirado o inválido. Realizar login nuevamente para obtener token fresco.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Error de Certificados SSL</h4>
+                    <p>En desarrollo, verificar que el certificado SSL del servidor sea válido o esté en modo desarrollo.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Problemas de Encoding</h4>
+                    <p>Asegurar que los caracteres especiales estén correctamente codificados en UTF-8.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Sistema Gestión OC2. Todos los derechos reservados.</p>
+            <p>Documentación generada automáticamente - Versión 1.0.0</p>
+        </footer>
+    </div>
+</body>
+</html>

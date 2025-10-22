@@ -4,7 +4,7 @@
 *==============================================================================
 
 *-- Lanzar el formulario principal
-LOCAL oForm as Form
+PUBLIC  oForm as Form
 oForm = NEWOBJECT("frmMain")
 oForm.WindowType = 1
 
@@ -18,6 +18,7 @@ DEFINE CLASS frmMain AS Form
     Height = 700
     Width = 1200
     AutoCenter = .T.
+    Themes = .F.
     Caption = "Sistema Gestion OC2 - Panel Principal"
     BorderStyle = 3
     ShowWindow = 2
@@ -37,7 +38,7 @@ DEFINE CLASS frmMain AS Form
     *-- Navbar lateral (sidebar)
     ADD OBJECT shpSidebar AS Shape WITH ;
         Top = 0, Left = 0, Height = 700, Width = 220, ;
-        BackColor = RGB(33,43,54), BorderWidth = 0
+        BackColor = RGB(30,41,59), BorderWidth = 0
     
     *-- Logo y titulo en sidebar
     ADD OBJECT lblLogo AS Label WITH ;
@@ -47,60 +48,60 @@ DEFINE CLASS frmMain AS Form
     
     ADD OBJECT lineSeparator AS Line WITH ;
         X1 = 20, Y1 = 60, X2 = 200, Y2 = 60, ;
-        BorderColor = RGB(60,70,85), BorderWidth = 1
+        BorderColor = RGB(71,85,105), BorderWidth = 1
     
     *-- Botones del menu (navbar)
     ADD OBJECT btnCustomers AS CommandButton WITH ;
-        Caption = CHR(9) + "Customers", Top = 90, Left = 10, Width = 200, Height = 40, ;
+        Caption = CHR(9) + "Clientes", Top = 90, Left = 10, Width = 200, Height = 40, ;
         FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
-        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
-        SpecialEffect = 0, Alignment = 0
+        Style = 1, BackColor = RGB(67,87,117), ForeColor = RGB(255,255,255), ;
+        BorderColor = RGB(82,101,132), SpecialEffect = 0, Alignment = 0
     
     ADD OBJECT btnProducts AS CommandButton WITH ;
-        Caption = CHR(9) + "Products", Top = 135, Left = 10, Width = 200, Height = 40, ;
+        Caption = CHR(9) + "Productos", Top = 135, Left = 10, Width = 200, Height = 40, ;
         FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
-        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
-        SpecialEffect = 0, Alignment = 0
+        Style = 1, BackColor = RGB(67,87,117), ForeColor = RGB(255,255,255), ;
+        BorderColor = RGB(82,101,132), SpecialEffect = 0, Alignment = 0
     
     ADD OBJECT btnOrders AS CommandButton WITH ;
-        Caption = CHR(9) + "Orders", Top = 180, Left = 10, Width = 200, Height = 40, ;
+        Caption = CHR(9) + "Pedidos", Top = 180, Left = 10, Width = 200, Height = 40, ;
         FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
-        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
-        SpecialEffect = 0, Alignment = 0
+        Style = 1, BackColor = RGB(67,87,117), ForeColor = RGB(255,255,255), ;
+        BorderColor = RGB(82,101,132), SpecialEffect = 0, Alignment = 0
     
     ADD OBJECT btnInvoices AS CommandButton WITH ;
-        Caption = CHR(9) + "Invoices", Top = 225, Left = 10, Width = 200, Height = 40, ;
+        Caption = CHR(9) + "Facturas", Top = 225, Left = 10, Width = 200, Height = 40, ;
         FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
-        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
-        SpecialEffect = 0, Alignment = 0
+        Style = 1, BackColor = RGB(67,87,117), ForeColor = RGB(255,255,255), ;
+        BorderColor = RGB(82,101,132), SpecialEffect = 0, Alignment = 0
     
     ADD OBJECT btnReports AS CommandButton WITH ;
-        Caption = CHR(9) + "Reports", Top = 270, Left = 10, Width = 200, Height = 40, ;
+        Caption = CHR(9) + "Reportes", Top = 270, Left = 10, Width = 200, Height = 40, ;
         FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
-        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
-        SpecialEffect = 0, Alignment = 0
+        Style = 1, BackColor = RGB(67,87,117), ForeColor = RGB(255,255,255), ;
+        BorderColor = RGB(82,101,132), SpecialEffect = 0, Alignment = 0
     
     ADD OBJECT btnRoles AS CommandButton WITH ;
         Caption = CHR(9) + "Roles", Top = 315, Left = 10, Width = 200, Height = 40, ;
         FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
-        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
-        SpecialEffect = 0, Alignment = 0
+        Style = 1, BackColor = RGB(67,87,117), ForeColor = RGB(255,255,255), ;
+        BorderColor = RGB(82,101,132), SpecialEffect = 0, Alignment = 0
     
     ADD OBJECT btnCategories AS CommandButton WITH ;
-        Caption = CHR(9) + "Categories", Top = 360, Left = 10, Width = 200, Height = 40, ;
+        Caption = CHR(9) + "Categorias", Top = 360, Left = 10, Width = 200, Height = 40, ;
         FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
-        BackColor = RGB(45,55,70), ForeColor = RGB(200,210,225), ;
-        SpecialEffect = 0, Alignment = 0
+        Style = 1, BackColor = RGB(67,87,117), ForeColor = RGB(255,255,255), ;
+        BorderColor = RGB(82,101,132), SpecialEffect = 0, Alignment = 0
     
     *-- Separador y boton de salir
     ADD OBJECT lineSeparator2 AS Line WITH ;
         X1 = 20, Y1 = 620, X2 = 200, Y2 = 620, ;
-        BorderColor = RGB(60,70,85), BorderWidth = 1
+        BorderColor = RGB(71,85,105), BorderWidth = 1
     
     ADD OBJECT btnLogout AS CommandButton WITH ;
         Caption = CHR(9) + "Logout", Top = 640, Left = 10, Width = 200, Height = 40, ;
         FontName = "Segoe UI", FontSize = 10, FontBold = .F., ;
-        BackColor = RGB(195,64,64), ForeColor = RGB(255,255,255), ;
+        BackColor = RGB(220,38,38), ForeColor = RGB(255,255,255), ;
         SpecialEffect = 0, Alignment = 0
     
     *-- Area de contenido principal
@@ -111,7 +112,7 @@ DEFINE CLASS frmMain AS Form
     
     *-- Header del contenido
     ADD OBJECT lblWelcome AS Label WITH ;
-        Caption = "Welcome back, " + gcUserEmail, ;
+        Caption = "Bienvenido estimado, " + gcUserEmail, ;
         FontName = "Segoe UI", FontSize = 18, FontBold = .T., ;
         ForeColor = RGB(33,63,125), Top = 30, Left = 250, ;
         Width = 600, Height = 30, BackStyle = 0
@@ -129,7 +130,7 @@ DEFINE CLASS frmMain AS Form
         SpecialEffect = 1, Curvature = 12
     
     ADD OBJECT lblCard1Title AS Label WITH ;
-        Caption = "Total Sales", FontName = "Segoe UI", FontSize = 11, ;
+        Caption = "Total Ventas", FontName = "Segoe UI", FontSize = 11, ;
         ForeColor = RGB(255,255,255), Top = 115, Left = 270, ;
         Width = 240, Height = 20, BackStyle = 0
     
@@ -139,7 +140,7 @@ DEFINE CLASS frmMain AS Form
         Width = 240, Height = 35, BackStyle = 0
     
     ADD OBJECT lblCard1Detail AS Label WITH ;
-        Caption = "731 Orders  |  +15.6%  +1.4k this week", ;
+        Caption = "731 Pedidos |  +15.6%  +1.4k esta semana", ;
         FontName = "Segoe UI", FontSize = 8, ;
         ForeColor = RGB(200,215,255), Top = 185, Left = 270, ;
         Width = 240, Height = 18, BackStyle = 0
@@ -215,6 +216,8 @@ DEFINE CLASS frmMain AS Form
     
     PROCEDURE btnOrders.Click
         THISFORM.LoadModule("Orders")
+        * Abrir el formulario de gestión de orders
+        DO OrdersGeneral.prg
     ENDPROC
     
     PROCEDURE btnInvoices.Click
@@ -283,19 +286,36 @@ DEFINE CLASS frmMain AS Form
     ENDPROC
     
     PROCEDURE ResetButtons
-        THIS.btnCustomers.BackColor = RGB(45,55,70)
-        THIS.btnProducts.BackColor = RGB(45,55,70)
-        THIS.btnOrders.BackColor = RGB(45,55,70)
-        THIS.btnInvoices.BackColor = RGB(45,55,70)
-        THIS.btnReports.BackColor = RGB(45,55,70)
-        THIS.btnRoles.BackColor = RGB(45,55,70)
-        THIS.btnCategories.BackColor = RGB(45,55,70)
+        THIS.btnCustomers.BackColor = RGB(67,87,117)
+        THIS.btnProducts.BackColor = RGB(67,87,117)
+        THIS.btnOrders.BackColor = RGB(67,87,117)
+        THIS.btnInvoices.BackColor = RGB(67,87,117)
+        THIS.btnReports.BackColor = RGB(67,87,117)
+        THIS.btnRoles.BackColor = RGB(67,87,117)
+        THIS.btnCategories.BackColor = RGB(67,87,117)
+        
+        THIS.btnCustomers.ForeColor = RGB(255,255,255)
+        THIS.btnProducts.ForeColor = RGB(255,255,255)
+        THIS.btnOrders.ForeColor = RGB(255,255,255)
+        THIS.btnInvoices.ForeColor = RGB(255,255,255)
+        THIS.btnReports.ForeColor = RGB(255,255,255)
+        THIS.btnRoles.ForeColor = RGB(255,255,255)
+        THIS.btnCategories.ForeColor = RGB(255,255,255)
+        
+        THIS.btnCustomers.FontBold = .F.
+        THIS.btnProducts.FontBold = .F.
+        THIS.btnOrders.FontBold = .F.
+        THIS.btnInvoices.FontBold = .F.
+        THIS.btnReports.FontBold = .F.
+        THIS.btnRoles.FontBold = .F.
+        THIS.btnCategories.FontBold = .F.
     ENDPROC
     
     PROCEDURE HighlightButton
         LPARAMETERS loButton
-        loButton.BackColor = RGB(37,92,221)
+        loButton.BackColor = RGB(59,130,246)
         loButton.ForeColor = RGB(255,255,255)
+        loButton.BorderColor = RGB(37,99,235)
         loButton.FontBold = .T.
     ENDPROC
 ENDDEFINE
